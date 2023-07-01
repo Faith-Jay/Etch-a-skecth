@@ -29,6 +29,12 @@ h5{
     margin-bottom: 10px;
     text-decoration: underline;
 }
+.header-span{
+    font-size: 1rem;
+    display: block;
+    color: #6b0f1a;
+    margin-bottom: 10px;
+}
 
 /* left column style */
 .left-column{
@@ -69,6 +75,7 @@ button:hover{
 .clear{
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 .clear-btn{
     margin-top: 20px;
@@ -122,12 +129,12 @@ button:hover{
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     width: 560px;
     height: 560px;
-    outline: 2px solid rgb(234, 188, 205);
+    outline: 2px solid #d2cece;
     border: none;
 }
 
 .grid-item{
-    outline: 1px solid rgb(234, 188, 205);
+    outline: 1px solid #d2cece;
     border: none;
     background-color: white;
 }
