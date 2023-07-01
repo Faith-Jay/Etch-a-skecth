@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a sketch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1> Etch a Sketch</h1>
+    <main>
+        <div class="left-column">
+            <h5>Change Grid Size</h5>
+            <div class="grid-size-btns">
+                <button class="grid-btn size" value="8">8 x 8</button>
+                <button class="grid-btn size" value="16">16 x 16</button>
+                <button class="grid-btn size" value="32">32 x 32</button>
+                <button class="grid-btn size" value="64">64 X 64</button>
+            </div>
+            <div class="custom-grid-slider">
+            <label for="slider">Pick a custom grid size: </label>
+            <div class="slider-couple"><input type="range" min="1" max="100" value="100" id="slider"> <span id="range-value"></span></div>
+            <button class="custom-grid-btn size">Make custom grid</button>
+            </div>
+            <h5>Change Color</h5>
+            <div class="other-color-functions">
+                <button class="random-color-btn colors">Random</button>
+                <button class="random-warm-color-btn colors">Random Warm</button>
+                <button class="random-cold-color-btn colors">Random Cold</button>
+                <button class="random-pastel-color-btn colors">Random Pastel</button>
+                <button class="incrementally-darken-btn colors">incrementally darken</button>
+            </div>
+            <div class="custom-color-picker">
+                <label for="color">Pick a custom color: </label>
+                <div class="color-couple"><input type="color" name="color" id="color" value="#000000"> <span id="color-value"></span></div>
+                <button class="color-btn colors">Use Custom color</button>
+                </div>
+
+                <div class="clear">
+                    <button class="clear-btn">Clear Board</button>
+                </div>
+        </div>
+        <div class="right-column">
+            <div class="grid">
+                
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
