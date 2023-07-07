@@ -73,13 +73,11 @@ button:hover{
     margin-bottom: 20px;
 }
 .clear{
-    display: flex;
-    justify-content: center;
+    display: grid;
     margin-bottom: 20px;
-}
-.clear-btn{
+    gap: 10px;
     margin-top: 20px;
-    width: 100%;
+  grid-template-columns: 1fr 1fr;
 }
 
 .custom-color-picker{

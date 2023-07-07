@@ -13,7 +13,8 @@ const randomPastelColorBtn = document.querySelector(".random-pastel-color-btn");
 const IncrementallyDarken = document.querySelector('.incrementally-darken-btn')
 const allSizeBtns = document.querySelectorAll('.size')
 const allColorBtns = document.querySelectorAll('.colors')
-const clearBtn = document.querySelector(".clear")
+const clearBtn = document.querySelector(".clear-btn")
+const eraseBtn = document.querySelector('.erase-btn')
 
 // Making grid appear
 function makeGrid(rows, cols) {
@@ -178,4 +179,12 @@ clearBtn.addEventListener('click', ()=>{
   grids.forEach((grid)=>{
     grid.style.backgroundColor = 'white'
   })
+})
+
+eraseBtn.addEventListener('click', ()=>{
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
+      grid.style.setProperty("background-color", "white");
+    });
+  });
 })
