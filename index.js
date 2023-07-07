@@ -10,11 +10,11 @@ const randomColorBtn = document.querySelector(".random-color-btn");
 const randomWarmColorBtn = document.querySelector(".random-warm-color-btn");
 const randomColdColorBtn = document.querySelector(".random-cold-color-btn");
 const randomPastelColorBtn = document.querySelector(".random-pastel-color-btn");
-const IncrementallyDarken = document.querySelector('.incrementally-darken-btn')
-const allSizeBtns = document.querySelectorAll('.size')
-const allColorBtns = document.querySelectorAll('.colors')
-const clearBtn = document.querySelector(".clear-btn")
-const eraseBtn = document.querySelector('.erase-btn')
+const IncrementallyDarken = document.querySelector(".incrementally-darken-btn");
+const allSizeBtns = document.querySelectorAll(".size");
+const allColorBtns = document.querySelectorAll(".colors");
+const clearBtn = document.querySelector(".clear-btn");
+const eraseBtn = document.querySelector(".erase-btn");
 
 // Making grid appear
 function makeGrid(rows, cols) {
@@ -35,11 +35,10 @@ gridSizeBtns.forEach((button) => {
     row = button.value;
     col = button.value;
     makeGrid(row, col);
-    grids.forEach((grid)=>{
-      grid.style.backgroundColor = 'white'
-    })
+    grids.forEach((grid) => {
+      grid.style.backgroundColor = "white";
+    });
   });
-  
 });
 
 //Cutom grid size selection
@@ -102,89 +101,87 @@ const getRandomNumber = (upperlimit, lowerlimit) => {
 };
 
 randomWarmColorBtn.addEventListener("click", () => {
-  grids.forEach((grid)=>{
-    grid.addEventListener('mouseover', ()=>{
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
       const h = getRandomNumber(0, 65);
       const randomColor = `hsl(${h}deg, 90%, 60%)`;
       grid.style.backgroundColor = randomColor;
-    })
-  })
+    });
+  });
 });
 
 randomColdColorBtn.addEventListener("click", () => {
-  grids.forEach((grid)=>{
-    grid.addEventListener('mouseover', ()=>{
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
       const h = getRandomNumber(70, 180);
       const randomColor = `hsl(${h}deg, 70%, 70%)`;
       grid.style.backgroundColor = randomColor;
-    })
-  })
+    });
+  });
 });
 
 randomPastelColorBtn.addEventListener("click", () => {
-  grids.forEach((grid)=>{
-    grid.addEventListener('mouseover', ()=>{
+  grids.forEach((grid) => {
+    grid.addEventListener("mouseover", () => {
       const h = getRandomNumber(0, 360);
       const randomColor = `hsl(${h}deg, 90%, 90%)`;
       grid.style.backgroundColor = randomColor;
-    })
-  })
+    });
+  });
 });
 
 // Incrementally Darken functionality.
-IncrementallyDarken.addEventListener('click', ()=>{
-  grids.forEach((grid)=>{
+IncrementallyDarken.addEventListener("click", () => {
+  grids.forEach((grid) => {
     let l = 90;
     let color = `hsl(360deg, 10%, ${l}%)`;
-    grid.addEventListener('mouseover', ()=>{
-      if (grid.style.backgroundColor && l > 0){
+    grid.addEventListener("mouseover", () => {
+      if (grid.style.backgroundColor && l > 0) {
         l = l - 10;
         color = `hsl(360deg, 10%, ${l}%)`;
-        grid.style.backgroundColor = color
+        grid.style.backgroundColor = color;
       } else {
-        grid.style.backgroundColor = color
+        grid.style.backgroundColor = color;
       }
-    })
-
-  })
-})
+    });
+  });
+});
 
 //Active button selection
-function removeActive(element){
-  element.forEach((tgt)=>{
-    tgt.style.removeProperty('border')
-  })
-  
+function removeActive(element) {
+  element.forEach((tgt) => {
+    tgt.style.removeProperty("border");
+  });
 }
-function setActive(element){
-  element.style.setProperty('border', "2px solid gold")
+function setActive(element) {
+  element.style.setProperty("border", "2px solid gold");
 }
 
-allSizeBtns.forEach((btn)=>{
-  btn.addEventListener('click', ()=>{
-    removeActive(allSizeBtns)
-    setActive(btn)
-  })
-})
+allSizeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    removeActive(allSizeBtns);
+    setActive(btn);
+  });
+});
 
-allColorBtns.forEach((btn)=>{
-  btn.addEventListener('click', ()=>{
-    removeActive(allColorBtns)
-    setActive(btn)
-  })
-})
+allColorBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    removeActive(allColorBtns);
+    setActive(btn);
+  });
+});
 
 // Clear Button Function
-clearBtn.addEventListener('click', ()=>{
-  grids.forEach((grid)=>{
-    grid.style.backgroundColor = 'white'
-  })
-})
+clearBtn.addEventListener("click", () => {
+  grids.forEach((grid) => {
+    grid.style.backgroundColor = "white";
+  });
+});
 
-eraseBtn.addEventListener('click', ()=>{
+eraseBtn.addEventListener("click", () => {
   grids.forEach((grid) => {
     grid.addEventListener("mouseover", () => {
       grid.style.setProperty("background-color", "white");
     });
   });
-})
+});
